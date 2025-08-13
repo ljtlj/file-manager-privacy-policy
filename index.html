@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件管理器 - 隐私政策 | File Manager - Privacy Policy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📁</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">📁</span>
+                <h1>文件管理器隐私政策</h1>
+                <p>File Manager Privacy Policy</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="language-selector">
+                <h2>选择语言 / Select Language / 언어 선택 / 言語を選択</h2>
+                <div class="language-grid">
+                    <a href="privacy-zh.html" class="language-card">
+                        <div class="flag">🇨🇳</div>
+                        <h3>中文简体</h3>
+                        <p>查看中文隐私政策</p>
+                    </a>
+                    
+                    <a href="privacy-en.html" class="language-card">
+                        <div class="flag">🇺🇸</div>
+                        <h3>English</h3>
+                        <p>View Privacy Policy in English</p>
+                    </a>
+                    
+                    <a href="privacy-ko.html" class="language-card">
+                        <div class="flag">🇰🇷</div>
+                        <h3>한국어</h3>
+                        <p>한국어로 개인정보 보호정책 보기</p>
+                    </a>
+                    
+                    <a href="privacy-ja.html" class="language-card">
+                        <div class="flag">🇯🇵</div>
+                        <h3>日本語</h3>
+                        <p>日本語でプライバシーポリシーを表示</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="app-info">
+                <h2>应用信息 / App Information</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <h3>文件管理器</h3>
+                        <p>功能强大的文件管理应用</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🛡️</div>
+                        <h3>隐私保护</h3>
+                        <p>严格保护您的个人隐私</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🧒</div>
+                        <h3>儿童友好</h3>
+                        <p>符合儿童隐私保护标准</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🌍</div>
+                        <h3>多语言支持</h3>
+                        <p>支持四种语言版本</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-summary">
+                <h2>隐私保护要点 / Privacy Highlights</h2>
+                <ul class="highlights-list">
+                    <li>✅ 所有数据本地存储，不上传服务器</li>
+                    <li>✅ 不收集个人敏感信息</li>
+                    <li>✅ 特别保护13岁以下儿童隐私</li>
+                    <li>✅ 符合国际隐私保护标准</li>
+                    <li>✅ 透明的数据使用政策</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Syntrix Team. All rights reserved.</p>
+                <p>Contact: <a href="mailto:30299135gg@gmail.com">30299135gg@gmail.com</a></p>
+                <p>Last updated: August 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 自动检测浏览器语言并跳转
+        function detectLanguage() {
+            const userLang = navigator.language || navigator.userLanguage;
+            const lang = userLang.substring(0, 2).toLowerCase();
+            
+            // 添加跳转按钮
+            const jumpBtn = document.createElement('div');
+            jumpBtn.className = 'auto-jump';
+            jumpBtn.innerHTML = `
+                <p>检测到您的语言设置，是否直接跳转？</p>
+                <button onclick="jumpToLanguage('${lang}')">直接跳转</button>
+                <button onclick="this.parentElement.style.display='none'">手动选择</button>
+            `;
+            
+            if (lang === 'zh') {
+                jumpBtn.innerHTML = `
+                    <p>检测到中文，<a href="privacy-zh.html">点击直接查看中文版本</a></p>
+                    <button onclick="this.parentElement.style.display='none'">×</button>
+                `;
+            } else if (lang === 'ko') {
+                jumpBtn.innerHTML = `
+                    <p>한국어 감지됨, <a href="privacy-ko.html">한국어 버전 보기</a></p>
+                    <button onclick="this.parentElement.style.display='none'">×</button>
+                `;
+            } else if (lang === 'ja') {
+                jumpBtn.innerHTML = `
+                    <p>日本語が検出されました, <a href="privacy-ja.html">日本語版を見る</a></p>
+                    <button onclick="this.parentElement.style.display='none'">×</button>
+                `;
+            } else {
+                jumpBtn.innerHTML = `
+                    <p>English detected, <a href="privacy-en.html">View English version</a></p>
+                    <button onclick="this.parentElement.style.display='none'">×</button>
+                `;
+            }
+            
+            document.body.insertBefore(jumpBtn, document.body.firstChild);
+        }
+        
+        function jumpToLanguage(lang) {
+            switch(lang) {
+                case 'zh': window.location.href = 'privacy-zh.html'; break;
+                case 'ko': window.location.href = 'privacy-ko.html'; break;
+                case 'ja': window.location.href = 'privacy-ja.html'; break;
+                default: window.location.href = 'privacy-en.html';
+            }
+        }
+        
+        // 页面加载后检测语言
+        window.addEventListener('load', detectLanguage);
+    </script>
+</body>
+</html>
